@@ -213,8 +213,34 @@ for (let i = 0; i < personasDatos.length; i++) {
 
 // 	return persona;
 // });
-let condicion=personasDatos.map((personasDatos)=>{for (let i = 0; i < personasDatos.length; i++) {
-	personasDatos[i].edad={...personasDatos[i].edad,puedeTrabajar: personasDatos[i].edad<=42? true : false};
-}
+let condicion=personasDatos.map((personasDatos)=>{
+	{
+		personasDatos.edad<=42
+		?(personasDatos = {...personasDatos, puedeTrabajar: true})
+		:(personasDatos = {...personasDatos, puedeTrabajar: false});
+	}return  personasDatos;
+	}
+)
+
+let nacionalidad=personasDatos.map((personasDatos)=> {
+	for (let i = 0; i < personasDatos.length; i++) {
+		personasDatos[i]={
+			...personasDatos[i],
+			nacionalidad: Argentino,
+		}
+		
+	}
 })
 console.log(condicion);
+console.log(nacionalidad);
+// for (let i = 0; i < personas.length; i++) {
+// 	let nombre1=personas[i].nombre.primerNombre;
+// 	//console.log(personas[i].nombre);
+// 	 personas[i]={
+// 		 ...personas[i],
+// 		 edad: personas[i].edad*2,
+// 		 nombre: {
+// 			 ...personas[i].nombre,
+// 			 primerNombre: nombre1+ ' -',
+// 		 }
+// 	 };
